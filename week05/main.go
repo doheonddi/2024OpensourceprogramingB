@@ -9,7 +9,7 @@ func main() {
 	//var i int=55
 	var f float32 = 1.92
 
-	i := 55
+	i := 54
 	fmt.Println("f is", f)
 	fmt.Println("i is", i)
 	fmt.Print("i is", i, "\n")
