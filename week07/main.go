@@ -1,12 +1,29 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"strings"
+)
+
 func main() {
-	// var float32 float32 = 9.1
-	// fmt.Println(float32)
-	// var number float
-	// fmt.Println(number)
+	var realScore float64
+	fmt.Print("정수 입력 :")
+	in := bufio.NewReader(os.Stdin)
+	score, err := in.ReadString('\n')
 
-	var fmt float32 = 9.1
-	fmt.Println(float32)
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	score = strings.TrimSpace(score)             // 줄바꿈, 띄어쓰기, 탭 등 제거 (python strip과 유사)
+	realScore, _ = strconv.ParseFloat(score, 64) // strconv 도 2개 받음, 실수형 64비트 타입으로 형변환
+	if realScore >= 90 {
+		fmt.Println("A")
+	} else {
+		fmt.Println("BCDF")
+	}
 }
