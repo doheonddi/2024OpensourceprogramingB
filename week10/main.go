@@ -25,26 +25,24 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//counts := 0
-	var isPrime bool = true // int -> bool, counts -> isPrime, memory
+	var isPrime bool = true
 	if n <= 1 {
-		//counts = -1
-		isPrime = false // 가독성
+		isPrime = false
 	} else {
 		i := 2
 		for i < n {
 			if n%i == 0 {
-				// counts++
-				isPrime = false // +연산 제거
+				isPrime = false
+				break
 			}
+			fmt.Printf("%d", i) // 반복 횟수 확인용 코드
 			i++
 		}
 	}
 
-	// if counts == 0 {
 	if isPrime {
-		fmt.Printf("%d는(은) 소수입니다.\n", n) // 수정된 부분: 콤마 추가
+		fmt.Printf("%d는(은) 소수입니다.\n", n)
 	} else {
-		fmt.Printf("%d는(은) 소수가 아닙니다.\n", n) // 수정된 부분: 콤마 추가
+		fmt.Printf("%d는(은) 소수가 아닙니다.\n", n)
 	}
 }
