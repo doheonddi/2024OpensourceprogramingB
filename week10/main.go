@@ -36,7 +36,8 @@ func main() {
 		isPrime = false
 	} else { // 3이상의 홀수
 		i := 3
-		for i <= int(math.Sqrt(float64(n))) {
+		// for i <= int(math.Sqrt(float64(n))) {
+		for i*i <= n {
 			if n%i == 0 {
 				isPrime = false
 				break
